@@ -19,3 +19,4 @@ env/
 .idea/
 .vscode/
 .claude/
+demo.nbconvert.ipynb
