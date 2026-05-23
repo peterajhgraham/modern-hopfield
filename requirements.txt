@@ -1,0 +1,6 @@
+jax[cpu]
+jaxlib
+numpy
+matplotlib
+jupyter
+tqdm
