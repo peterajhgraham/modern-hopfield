@@ -12,16 +12,16 @@ identical inputs. The maximum absolute difference is `4e-16`.
 
 ## What's implemented
 
-- **Classical Hopfield** — `hebbian_store`, `energy`, `async_update`,
+- **Classical Hopfield** - `hebbian_store`, `energy`, `async_update`,
   `sync_update`. Binary `+/-1` patterns, gradient descent on the
   quadratic energy surface.
-- **Modern (continuous) Hopfield** — `modern_store`, `modern_energy`,
+- **Modern (continuous) Hopfield** - `modern_store`, `modern_energy`,
   `modern_retrieve`. Log-sum-exp energy, softmax fixed-point iteration,
   exponential storage capacity.
-- **`vmap` + `jit` batch retrieval** — `batch_retrieve`, `fast_retrieve`.
+- **`vmap` + `jit` batch retrieval** - `batch_retrieve`, `fast_retrieve`.
   Two lines on top of `modern_retrieve`; in the demo notebook it beats
   the Python-loop baseline by `>10000x` on CPU.
-- **Attention equivalence proof** — `attention`, `verify_equivalence`.
+- **Attention equivalence proof** - `attention`, `verify_equivalence`.
   Asserts one step of modern Hopfield retrieval equals scaled
   dot-product attention, to floating-point precision.
 
