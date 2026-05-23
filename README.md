@@ -79,7 +79,7 @@ fast_retrieve = jax.jit(batch_retrieve, static_argnums=(3,))
 ## Quick start
 
 ```bash
-git clone https://github.com/<you>/modern-hopfield && cd modern-hopfield
+git clone https://github.com/peterajhgraham/modern-hopfield && cd modern-hopfield
 pip install -r requirements.txt
 jupyter notebook demo.ipynb
 ```
