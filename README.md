@@ -7,7 +7,7 @@
 ![attention equals Hopfield retrieval](figures/attention_equivalence.png)
 
 The two bar charts are produced by two functions written from different
-viewpoints — an associative memory and an attention layer — given
+viewpoints - an associative memory and an attention layer - given
 identical inputs. The maximum absolute difference is `4e-16`.
 
 ## What's implemented
@@ -53,7 +53,7 @@ the keys and values. The query is the query.
 
 Three primitives carry the whole library.
 
-**`jax.grad`** — the update rule of either Hopfield network is the
+**`jax.grad`** - the update rule of either Hopfield network is the
 gradient of its energy. No backward-pass code required:
 
 ```python
@@ -61,14 +61,14 @@ import jax
 grad_E = jax.grad(hopfield.energy, argnums=1)   # -W s
 ```
 
-**`jax.vmap`** — go from single-query retrieval to batched retrieval by
+**`jax.vmap`** - go from single-query retrieval to batched retrieval by
 specifying which axis is the batch, not by rewriting the function:
 
 ```python
 batch_retrieve = jax.vmap(modern_retrieve, in_axes=(None, 0, None, None))
 ```
 
-**`jax.jit`** — compile the whole thing to fused XLA kernels with one
+**`jax.jit`** - compile the whole thing to fused XLA kernels with one
 decorator. The benchmark cell in `demo.ipynb` shows `>10000x` speedup
 over the Python-loop baseline on CPU:
 
